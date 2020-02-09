@@ -46,7 +46,7 @@ struct ReminderListItem: View {
 
         return HStack {
             Checkbox(enabled: completeness)
-            Text(reminder.title ?? "Nil?")
+            Text(reminder.title ?? "No title")
             Text(reminder.desc ?? "No description")
         }
     }
