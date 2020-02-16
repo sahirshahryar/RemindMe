@@ -9,10 +9,57 @@
 import SwiftUI
 import CoreData
 
+public struct ReminderStack: View {
+
+    @State var topReminder: Reminder
+    @State var bottomReminder: Reminder
+
+    public var body: some View {
+        VStack(spacing: 10) {
+            ReminderView(reminder: topReminder)
+            ReminderView(reminder: bottomReminder)
+        }
+    }
+
+}
+
+public struct ReminderList: View {
+
+    @State var reminders: FetchedResults<Reminder>
+    @State var heading: String
+
+    public var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            // if self.reminders.count < 5 {
+                HStack(spacing: 10) {
+                    ForEach(self.reminders, id: \.self) { rem in
+                        ReminderView(reminder: rem)
+                    }
+                }.padding([.leading, .trailing], 24)
+
+            // OMITTED FUNCTIONALITY: Making the reminders list two units tall
+            // if there are 5 or more reminders. Unfortunately this layout takes the
+            // SwiftUI compiler too long to type-check, so I'll skip it for now.
+            /* } else {
+                HStack(spacing: 10) {
+                    ForEach(0 ..< ceil(CGFloat(self.reminders.count) / 2.0)) { i in
+                        ReminderStack(topReminder: self.reminders[i * 2],
+                                      bottomReminder: self.reminders[(i * 2) + 1])
+                    }
+                }
+                .padding(.leading, 24)
+            } */
+        }
+        .frame(width: UIScreen.main.bounds.size.width,
+               height: nil, alignment: .leading)
+    }
+
+}
+
 public struct ContentView: View {
 
     @Environment(\.managedObjectContext) var managedObjectContext
-    @Environment(\.colorScheme) var theme
+    // @Environment(\.colorScheme) var theme
 
     @FetchRequest(entity: Reminder.entity(),
                   sortDescriptors: [
@@ -44,31 +91,18 @@ public struct ContentView: View {
                  * are due soon.
                  */
                 Text("HERE & NOW")
-                    .font(.system(.body, design: .rounded))
+                    .font(.system(.headline, design: .rounded))
+                    .fontWeight(.medium)
                     .frame(width: UIScreen.main.bounds.size.width, height: nil,
                            alignment: .leading)
                     .padding(.leading, 44)
 
-
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        // TODO: Limit these reminders to only ones deemed "here & now"
-                        ForEach(0..<self.reminders.count) {
-                            ReminderView(reminder: self.reminders[$0])
-                        }
-                    }
-                    .padding(.leading, 24)
-                }.frame(width: UIScreen.main.bounds.size.width,
-                        height: nil, alignment: .leading)
+                ReminderList(reminders: self.reminders, heading: "HERE & NOW")
             }
-
+            .padding(.top, 12)
             .navigationBarTitle("What's next?", displayMode: .large)
             .background(
-                theme == .dark ?
-                    Image("background").resizable()
-                        .frame(width: UIScreen.main.bounds.size.width * 3, height: UIScreen.main.bounds.size.height + 120, alignment: .center)
-                        .blur(radius: 10)
-                    : Image("background-light").resizable()
+                Image("background").resizable()
                         .frame(width: UIScreen.main.bounds.size.width * 3, height: UIScreen.main.bounds.size.height + 120, alignment: .center)
                         .blur(radius: 10)
             )
