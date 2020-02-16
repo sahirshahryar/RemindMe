@@ -28,7 +28,7 @@ struct Checkbox: View {
 /**
  * UI element for an item within a list
  */
-struct ReminderListItem: View {
+struct ReminderView: View {
 
     @State var reminder: Reminder
 
@@ -46,9 +46,16 @@ struct ReminderListItem: View {
 
         return HStack {
             Checkbox(enabled: completeness)
-            Text(reminder.title ?? "No title")
-            Text(reminder.desc ?? "No description")
+            VStack {
+                Text(self.reminder.title ?? "Untitled")
+                Text(self.reminder.desc ?? "No description")
+            }
         }
+        .frame(width: 150, height: 80, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.init(UIColor.systemGray6))
+        )
     }
 
 }

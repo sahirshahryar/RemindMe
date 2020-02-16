@@ -29,18 +29,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        pm.createReminder(title: "Hello!")
 //        pm.createReminder(title: "There!")
 
-        let reminderType = NSEntityDescription.entity(forEntityName: "Reminder", in: context)
-        let newReminder = NSManagedObject(entity: reminderType!, insertInto: context)
-
-        newReminder.setValue("Hello", forKey: "title")
-        newReminder.setValue(false, forKey: "complete")
-
-        do {
-            try context.save()
-            print("Save successful")
-        } catch {
-            print("Error saving")
-        }
+//        let reminderType = NSEntityDescription.entity(forEntityName: "Reminder", in: context)
+//        let newReminder = NSManagedObject(entity: reminderType!, insertInto: context)
+//
+//        newReminder.setValue("Hello", forKey: "title")
+//        newReminder.setValue(false, forKey: "complete")
+//
+//        do {
+//            try context.save()
+//            print("Save successful")
+//        } catch {
+//            print("Error saving")
+//        }
         //let contentView = ContentView(reminder: reminder)
 
         // Use a UIHostingController as window root view controller.

@@ -12,6 +12,7 @@ import CoreData
 public struct ContentView: View {
 
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.colorScheme) var theme
 
     @FetchRequest(entity: Reminder.entity(),
                   sortDescriptors: [
@@ -31,16 +32,47 @@ public struct ContentView: View {
         } catch {
 
         } */
+
+
     }
 
     public var body: some View {
         NavigationView {
-            List (reminders, id: \.self) { reminder in
-                ReminderListItem(reminder: reminder)
+            ScrollView {
+                /**
+                 * First, show the reminders that are can be completed nearby AND
+                 * are due soon.
+                 */
+                Text("HERE & NOW")
+                    .font(.system(.body, design: .rounded))
+                    .frame(width: UIScreen.main.bounds.size.width, height: nil,
+                           alignment: .leading)
+                    .padding(.leading, 44)
+
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        // TODO: Limit these reminders to only ones deemed "here & now"
+                        ForEach(0..<self.reminders.count) {
+                            ReminderView(reminder: self.reminders[$0])
+                        }
+                    }
+                    .padding(.leading, 24)
+                }.frame(width: UIScreen.main.bounds.size.width,
+                        height: nil, alignment: .leading)
             }
 
+            .navigationBarTitle("What's next?", displayMode: .large)
+            .background(
+                theme == .dark ?
+                    Image("background").resizable()
+                        .frame(width: UIScreen.main.bounds.size.width * 3, height: UIScreen.main.bounds.size.height + 120, alignment: .center)
+                        .blur(radius: 10)
+                    : Image("background-light").resizable()
+                        .frame(width: UIScreen.main.bounds.size.width * 3, height: UIScreen.main.bounds.size.height + 120, alignment: .center)
+                        .blur(radius: 10)
+            )
 
-            .navigationBarTitle("What's next?")
         }
     }
 }
