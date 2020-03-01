@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="boundary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geofence"/>
+    </entity>
     <entity name="ChecklistItem" representedClassName="ChecklistItem" syncable="YES" codeGenerationType="class">
         <attribute name="complete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -7,29 +11,34 @@
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder"/>
     </entity>
     <entity name="Geofence" representedClassName="Geofence" syncable="YES" codeGenerationType="class">
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder"/>
+        <attribute name="alertOnExit" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
+        <attribute name="radius" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
         <attribute name="complete" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="preserveSorting" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="boundary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geofence"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Schedule"/>
     </entity>
-    <entity name="Schedule" representedClassName="Schedule" syncable="YES" codeGenerationType="class">
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder"/>
-    </entity>
-    <entity name="ScheduledInstance" representedClassName="ScheduledInstance" isAbstract="YES" syncable="YES" codeGenerationType="class">
+    <entity name="Schedule" representedClassName="Schedule" syncable="YES" codeGenerationType="class"/>
+    <entity name="ScheduledInstance" representedClassName="ScheduledInstance" syncable="YES" codeGenerationType="class">
+        <attribute name="alertTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="appearTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="complete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="disappearTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Schedule"/>
     </entity>
-    <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String"/>
-    </entity>
     <elements>
-        <element name="Reminder" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Tag" positionX="-63" positionY="-27" width="128" height="58"/>
-        <element name="Geofence" positionX="-54" positionY="-18" width="128" height="58"/>
-        <element name="Schedule" positionX="-36" positionY="0" width="128" height="58"/>
-        <element name="ScheduledInstance" positionX="-18" positionY="18" width="128" height="58"/>
         <element name="ChecklistItem" positionX="-9" positionY="45" width="128" height="103"/>
+        <element name="Geofence" positionX="-54" positionY="-18" width="128" height="88"/>
+        <element name="Reminder" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Schedule" positionX="-36" positionY="0" width="128" height="43"/>
+        <element name="ScheduledInstance" positionX="-18" positionY="18" width="128" height="118"/>
+        <element name="Category" positionX="-63" positionY="-27" width="128" height="73"/>
     </elements>
 </model>
