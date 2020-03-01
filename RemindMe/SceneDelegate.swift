@@ -21,27 +21,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
 
-        let container = AppDelegate.get().persistentContainer
-        let context = container.viewContext
-        let contentView = ContentView().environment(\.managedObjectContext, context)
+        // CoreData setup
+        let context = AppDelegate.getContext()
 
-//        let pm = PersistenceManager(cont: container)
-//        pm.createReminder(title: "Hello!")
-//        pm.createReminder(title: "There!")
+        /**
+         * Temporary code
+         */
+        var category: Category? = nil
+        for value in ["Alpha", "Beta", "Gamma"] {
+            let newCategory = NSManagedObject(entity: Category.entity(),
+                                              insertInto: context)
 
-//        let reminderType = NSEntityDescription.entity(forEntityName: "Reminder", in: context)
-//        let newReminder = NSManagedObject(entity: reminderType!, insertInto: context)
-//
-//        newReminder.setValue("Hello", forKey: "title")
-//        newReminder.setValue(false, forKey: "complete")
-//
-//        do {
-//            try context.save()
-//            print("Save successful")
-//        } catch {
-//            print("Error saving")
-//        }
-        //let contentView = ContentView(reminder: reminder)
+            newCategory.setValue(value, forKey: "name")
+            category = (newCategory as! Category)
+        }
+
+        if !AppDelegate.saveContext() {
+            print("Error saving")
+        }
+
+        let contentView = ContentView(category: category!).environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

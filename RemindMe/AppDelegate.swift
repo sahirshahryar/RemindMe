@@ -12,26 +12,35 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "RemindersModel")
         container.loadPersistentStores(completionHandler: { desc, errors in
             if let error = errors {
-                // todo
+                print("Error detected")
+                print(error)
             }
         })
 
         return container
     }()
 
-    func saveContext() {
-        let context = persistentContainer.viewContext
+    static func getContext() -> NSManagedObjectContext {
+        return AppDelegate.get().persistentContainer.viewContext
+    }
+
+    static func saveContext() -> Bool {
+        let context = getContext()
         if context.hasChanges {
             do {
                 try context.save()
+                return true
             } catch {
                 // todo: Report error
+                return false
             }
         }
+
+        return true
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
