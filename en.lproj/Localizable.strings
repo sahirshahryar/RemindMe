@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  RemindMe
+
+  Created by Sahir Shahryar on 2/17/20.
+  Copyright © 2020 Sahir Shahryar. All rights reserved.
+*/
+
+// Home screen
+"titleBar" = "What's next?";
+"hereAndNow" = "HERE & NOW";
+"nearby" = "NEARBY";
+"soon" = "SOON";
+"whenever" = "WHENEVER";
+"justCompleted" = "JUST COMPLETED";
+"archived" = "ARCHIVED";
+
+"reminderExclusion %@ %@" = "Only showing reminders for the location “%@.” To show other reminders, tap “at %@” in the navigation bar.";
+
+// Reminder editing UI
+"newReminder" = "New reminder";
+"reminderTitle" = "Title";
+"description" = "Description";
+
+// Checklist
+"createSubtask" = "Create checklist...";
+"anotherSubtask" = "Another item...";
+"preserveSortingOn" = "Original order";
+"preserveSortingOff" = "Incomplete first";
+
+// Reminder subviews
+"category" = "Category";
+"location" = "Location";
+"schedule" = "Schedule";
+"Alert" = "Alert";

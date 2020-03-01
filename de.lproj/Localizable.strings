@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  RemindMe
+
+  Created by Sahir Shahryar on 2/17/20.
+  Copyright © 2020 Sahir Shahryar. All rights reserved.
+*/
+
+// Home screen
+"titleBar" = "Und jetzt?";
+"hereAndNow" = "JETZT SOFORT";
+"nearby" = "NAH";
+"soon" = "BALD";
+"whenever" = "IRGENDWANN";
+"justCompleted" = "GERADE ABGESCHLOSSEN";
+"archived" = "ARCHIVIERT";
+
+"reminderExclusion %@ %@" = "Nur Errinerungen aus den “%@”-Ort wird gezeigt. Um alle Errinerungen zu zeigen, zapfe “am %@” in den Navigationsmenü an.";
+
+// 
+"newReminder" = "neue Errinerung";
+"reminderTitle" = "Bezeichnung";
+"description" = "Beschreibung";
+
+// Sublist
+"createSubtask" = "neues Aufgäbchen...";
+"anotherSubtask" = "noch eines...";
+"preserveSortingOn" = "Original order";
+"preserveSortingOff" = "Incomplete first";
+
+// Reminder subviews
+"category" = "Klasse";
+"location" = "Ort";
+"schedule" = "Zeitplan";
+"Alert" = "Alarm";

@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  RemindMe
+
+  Created by Sahir Shahryar on 2/17/20.
+  Copyright © 2020 Sahir Shahryar. All rights reserved.
+*/
+
+"titleBar" = "अब क्या?";
+"hereAndNow" = "यहां, अभी";
+"nearby" = "पास मैं";
+"soon" = "जल्दी";
+"whenever" = "कोई भी वक्त";
+"justCompleted" = "अभी खतम";
+"archived" = "यादों";
+
+"reminderExclusion %@ %@" = "सिर्फ़ “%@” के अनुस्मारकों दिख्वाएगे हैं। दूसरे अनुस्मारकों को दिखाने के लिए “%@ पर” नैविगेशन मेन्यू मैं टैप करो।";
+
+// 
+"newReminder" = "नया अनुस्मारक";
+"reminderTitle" = "शीर्श्षक";
+"description" = "डिस्क्रिप्शन";
+
+// Sublist
+"createSubtask" = "उस्के नीचे...";
+"anotherSubtask" = "और कुच...";
+"preserveSortingOn" = "मूल क्रम";
+"preserveSortingOff" = "जो रहता है पैले";
+
+// Reminder subviews
+"category" = "वर्ग";
+"location" = "जगा";
+"schedule" = "शिड्यूल";
+"Alert" = "तलबी";
