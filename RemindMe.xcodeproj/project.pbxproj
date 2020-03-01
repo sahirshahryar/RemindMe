@@ -21,7 +21,6 @@
 		AA5CE83B23D0D01500A0FE17 /* RemindMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CE83A23D0D01500A0FE17 /* RemindMeUITests.swift */; };
 		AAA765CA23D174BC00A289F7 /* RemindersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA765C823D174BC00A289F7 /* RemindersModel.xcdatamodeld */; };
 		AADD991023D2302700C41359 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD990F23D2302700C41359 /* ReminderView.swift */; };
-		AADF2CBD23D2394700C7B9CB /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF2CBC23D2394700C7B9CB /* PersistenceManager.swift */; };
 		AADF2CBF23D23AED00C7B9CB /* ScheduleSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */; };
 		AADF2CC023D23EAA00C7B9CB /* RemindersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA765C823D174BC00A289F7 /* RemindersModel.xcdatamodeld */; };
 		AADF2CC123D23EAB00C7B9CB /* RemindersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA765C823D174BC00A289F7 /* RemindersModel.xcdatamodeld */; };
@@ -73,7 +72,6 @@
 		AA5CE83C23D0D01500A0FE17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAA765C923D174BC00A289F7 /* RemindersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindersModel.xcdatamodel; sourceTree = "<group>"; };
 		AADD990F23D2302700C41359 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
-		AADF2CBC23D2394700C7B9CB /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSpecification.swift; sourceTree = "<group>"; };
 		AAFE303D24022ED000CDD6D0 /* EditingSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingSubviews.swift; sourceTree = "<group>"; };
 		AAFE30422405A05300CDD6D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				AAA765C823D174BC00A289F7 /* RemindersModel.xcdatamodeld */,
-				AADF2CBC23D2394700C7B9CB /* PersistenceManager.swift */,
 				AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */,
 				AA036DEE23FAFC4B00C66511 /* Reminder.swift */,
 			);
@@ -332,7 +329,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1002BC23FA3F3200DAC5F2 /* EditReminderView.swift in Sources */,
-				AADF2CBD23D2394700C7B9CB /* PersistenceManager.swift in Sources */,
 				AA5CE81923D0D01100A0FE17 /* AppDelegate.swift in Sources */,
 				AADD991023D2302700C41359 /* ReminderView.swift in Sources */,
 				AADF2CBF23D23AED00C7B9CB /* ScheduleSpecification.swift in Sources */,
