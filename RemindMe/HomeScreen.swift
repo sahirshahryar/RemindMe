@@ -156,7 +156,7 @@ struct Card<C: View>: View {
             set: { self.expanded = $0 }
         )
         return self.contents(binding).onTapGesture {
-            self.presentationDetails.view = AnyView(self)
+            self.expanded.toggle()
         }
     }
 
