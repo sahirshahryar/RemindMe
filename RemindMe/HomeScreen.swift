@@ -43,6 +43,8 @@ struct PrimaryContentView: View {
      */
     @State var cardPresented = false
 
+    @State var tappingBackgroundCollapsesCard = false
+
     /**
      * The details of the card view that is about to be presented to the
      * user.
@@ -82,6 +84,18 @@ struct PrimaryContentView: View {
         }
     }
 
+    func presentCard() {
+        if presentationDetails.valid() {
+
+        }
+    }
+
+    func collapseCard() {
+        guard let _ = presentationDetails.view else {
+            return
+        }
+    }
+
 }
 
 
@@ -95,14 +109,14 @@ class CardPresentationDetails: ObservableObject {
      * presented in isolation. The card view will start at this position
      * in its collapsed state.
      */
-    var origin: CGPoint?
+    @Published var cardPosition: CGPoint?
 
     /**
      * The final position of the top-left corner of the card that will be
      * presented in isolation. The card view will expand into its full size
      * and pan into this position from `origin` simultaneously.
      */
-    var destination: CGPoint?
+    @Published var destination: CGPoint?
 
     /**
      * The actual view to be presented. This should be a `Card`, but there
@@ -116,25 +130,29 @@ class CardPresentationDetails: ObservableObject {
      * animating the transition from collapsed to expanded card should be extremely
      * simple.
      */
-    var view: AnyView?
-
-    init(startingPoint origin: CGPoint?,
-         endingPoint destination: CGPoint?,
-         presentedView view: AnyView?) {
-        self.origin = origin
-        self.destination = destination
-        self.view = view
-    }
+    @Published var view: AnyView?
 
     static let empty = CardPresentationDetails(startingPoint: nil,
                                                endingPoint: nil,
                                                presentedView: nil)
 
+    init(startingPoint origin: CGPoint?,
+         endingPoint destination: CGPoint?,
+         presentedView view: AnyView?) {
+        self.cardPosition = origin
+        self.destination = destination
+        self.view = view
+    }
+
+    func valid() -> Bool {
+        return notNil(self.cardPosition, self.destination, self.view)
+    }
+
 }
 
 
 /**
- * 
+ * Represents an expandable card that can be displayed to the user.
  */
 struct Card<C: View>: View {
 
@@ -166,22 +184,29 @@ struct Card<C: View>: View {
 
 }
 
-protocol CardPopulator {
-    func contents(forIndex index: Int) -> AnyView
-}
+struct ReminderSection: View {
 
-class CardSection {
-    var heading: String
-    var populator: CardPopulator
+    @State var sectionHeading: String
+    @State var reminders: [Reminder]
 
-    init(title: String = "", cards: CardPopulator) {
-        self.heading = title
-        self.populator = cards
+    var body: some View {
+        Group {
+            if self.reminders.count <= 5 {
+                self.standard
+            } else {
+                self.stacked
+            }
+        }
     }
 
-    public func cardFor(_ index: Int) -> AnyView {
-        return AnyView(populator.contents(forIndex: index))
+    var standard: some View {
+        Text("")
     }
+
+    var stacked: some View {
+        Text("")
+    }
+
 }
 
 

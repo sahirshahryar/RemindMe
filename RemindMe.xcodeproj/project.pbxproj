@@ -21,6 +21,10 @@
 		AA5CE83B23D0D01500A0FE17 /* RemindMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CE83A23D0D01500A0FE17 /* RemindMeUITests.swift */; };
 		AA5D1A43241712F50058A7BA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D1A42241712F50058A7BA /* HomeScreen.swift */; };
 		AA5D1A4524177A2F0058A7BA /* Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D1A4424177A2F0058A7BA /* Subviews.swift */; };
+		AA5D1A47241838AB0058A7BA /* ReminderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D1A46241838AB0058A7BA /* ReminderCard.swift */; };
+		AA5D1A48241848E00058A7BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE3048240B606200CDD6D0 /* Extensions.swift */; };
+		AA5D1A49241848E20058A7BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE3048240B606200CDD6D0 /* Extensions.swift */; };
+		AA5D1A4C24184B920058A7BA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D1A4B24184B920058A7BA /* Utilities.swift */; };
 		AAA765CA23D174BC00A289F7 /* RemindersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA765C823D174BC00A289F7 /* RemindersModel.xcdatamodeld */; };
 		AADD991023D2302700C41359 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD990F23D2302700C41359 /* ReminderView.swift */; };
 		AADF2CBF23D23AED00C7B9CB /* ScheduleSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */; };
@@ -74,6 +78,8 @@
 		AA5CE83C23D0D01500A0FE17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5D1A42241712F50058A7BA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		AA5D1A4424177A2F0058A7BA /* Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subviews.swift; sourceTree = "<group>"; };
+		AA5D1A46241838AB0058A7BA /* ReminderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCard.swift; sourceTree = "<group>"; };
+		AA5D1A4B24184B920058A7BA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AAA765C923D174BC00A289F7 /* RemindersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindersModel.xcdatamodel; sourceTree = "<group>"; };
 		AADD990F23D2302700C41359 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSpecification.swift; sourceTree = "<group>"; };
@@ -140,13 +146,13 @@
 				AA5D1A42241712F50058A7BA /* HomeScreen.swift */,
 				AADD991123D231E800C41359 /* Views */,
 				AAA765C323D173F300A289F7 /* DataStructures */,
+				AA5D1A4A24184B6F0058A7BA /* Utilities */,
 				AA5CE81823D0D01100A0FE17 /* AppDelegate.swift */,
 				AA5CE81A23D0D01100A0FE17 /* SceneDelegate.swift */,
 				AA5CE81E23D0D01500A0FE17 /* Assets.xcassets */,
 				AA5CE82323D0D01500A0FE17 /* LaunchScreen.storyboard */,
 				AA5CE82623D0D01500A0FE17 /* Info.plist */,
 				AA5CE82023D0D01500A0FE17 /* Preview Content */,
-				AAFE3048240B606200CDD6D0 /* Extensions.swift */,
 			);
 			path = RemindMe;
 			sourceTree = "<group>";
@@ -177,6 +183,15 @@
 			path = RemindMeUITests;
 			sourceTree = "<group>";
 		};
+		AA5D1A4A24184B6F0058A7BA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE3048240B606200CDD6D0 /* Extensions.swift */,
+				AA5D1A4B24184B920058A7BA /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		AAA765C323D173F300A289F7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +210,7 @@
 				AAFE303D24022ED000CDD6D0 /* EditingSubviews.swift */,
 				AAFE3046240B2E2500CDD6D0 /* CategoryList.swift */,
 				AA5D1A4424177A2F0058A7BA /* Subviews.swift */,
+				AA5D1A46241838AB0058A7BA /* ReminderCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,9 +356,11 @@
 				AA5D1A4524177A2F0058A7BA /* Subviews.swift in Sources */,
 				AADF2CBF23D23AED00C7B9CB /* ScheduleSpecification.swift in Sources */,
 				AA5CE81B23D0D01100A0FE17 /* SceneDelegate.swift in Sources */,
+				AA5D1A4C24184B920058A7BA /* Utilities.swift in Sources */,
 				AA5CE81D23D0D01100A0FE17 /* Home.swift in Sources */,
 				AAA765CA23D174BC00A289F7 /* RemindersModel.xcdatamodeld in Sources */,
 				AA5D1A43241712F50058A7BA /* HomeScreen.swift in Sources */,
+				AA5D1A47241838AB0058A7BA /* ReminderCard.swift in Sources */,
 				AAFE3049240B606200CDD6D0 /* Extensions.swift in Sources */,
 				AA1002BE23FA56E200DAC5F2 /* ViewControllerAccess.swift in Sources */,
 				AA036DEF23FAFC4B00C66511 /* Reminder.swift in Sources */,
@@ -356,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5CE83023D0D01500A0FE17 /* RemindMeTests.swift in Sources */,
+				AA5D1A48241848E00058A7BA /* Extensions.swift in Sources */,
 				AADF2CC023D23EAA00C7B9CB /* RemindersModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5CE83B23D0D01500A0FE17 /* RemindMeUITests.swift in Sources */,
+				AA5D1A49241848E20058A7BA /* Extensions.swift in Sources */,
 				AADF2CC123D23EAB00C7B9CB /* RemindersModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
