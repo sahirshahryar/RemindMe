@@ -1,11 +1,3 @@
-//
-//  Reminder.swift
-//  RemindMe
-//
-//  Created by Sahir Shahryar on 2/17/20.
-//  Copyright © 2020 Sahir Shahryar. All rights reserved.
-//
-
 /*
  * This file is part of RemindMe, licensed under the MIT License (MIT).
  *
@@ -41,6 +33,7 @@
  * - Since: Monday, February 17, 2020
  * - Version: 1.0.0
  */
+import SwiftUI
 import Foundation
 
 extension Reminder {
@@ -48,9 +41,32 @@ extension Reminder {
     /**
      * Generates a timely description for this reminder. For example, if a reminder is
      * due by 12:00 AM tomorrow, this method could return "by midnight".
+     *
+     * To display as much relevant information as possible within the constraints
+     * imposed by the application, we use the knapsack algorithm. Not every string of
+     * text that we *can* display to the user is equally useful; for example, it could
+     * be more useful to tell the user a reminder is "due now" or is "0.3 mi away"
+     * than to show "alert set" or "1 subtask remaining". By using the knapsack algorithm,
+     * with arbitrarily decided values (i.e., *I* decide what's most important, although
+     * we could make it so the user can choose what to prioritize in a later update) and
+     * weights being the lengths of the strings, we can show the most valuable information
+     * to the user dynamically.
      */
     func getSubtitle(maxWidth: Int) -> String {
-        return ""
+        var potentialResults: [(item: String, weight: Int, value: Int)] = []
+
+        func strWidth(_ str: String) -> Int {
+            let size: CGSize = str.size(withAttributes: ReminderCard.subtitleFont)
+            return Int(ceil(size.width))
+        }
+
+        // Populate `potentialResults`
+        // TODO
+
+        // return knapsack()
+
+        let bestFit = knapsack(objects: potentialResults, maxWeight: maxWidth)
+        return " • ".join(bestFit.map({ $0.item }))
     }
     
 }

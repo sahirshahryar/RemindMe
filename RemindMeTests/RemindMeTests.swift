@@ -22,6 +22,21 @@ class RemindMeTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        // Knapsack test
+        let inputData: [(item: String, weight: Int, value: Int)] = [
+            (item: "Yeah", weight: 4, value: 5),
+            (item: "Hello", weight: 5, value: 3),
+            (item: "Soon", weight: 4, value: 10),
+            (item: "Nearby", weight: 6, value: 8),
+            (item: "Howdy", weight: 5, value: 2),
+            (item: "Bye", weight: 3, value: 1)
+        ]
+
+        let output = knapsack(objects: inputData, maxWeight: 14)
+                         .sorted(by: { $0.value > $1.value })
+
+        print(output)
     }
 
     func testPerformanceExample() {
