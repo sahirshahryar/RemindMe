@@ -19,6 +19,8 @@
 		AA5CE82523D0D01500A0FE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5CE82323D0D01500A0FE17 /* LaunchScreen.storyboard */; };
 		AA5CE83023D0D01500A0FE17 /* RemindMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CE82F23D0D01500A0FE17 /* RemindMeTests.swift */; };
 		AA5CE83B23D0D01500A0FE17 /* RemindMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CE83A23D0D01500A0FE17 /* RemindMeUITests.swift */; };
+		AA5D1A43241712F50058A7BA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D1A42241712F50058A7BA /* HomeScreen.swift */; };
+		AA5D1A4524177A2F0058A7BA /* Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D1A4424177A2F0058A7BA /* Subviews.swift */; };
 		AAA765CA23D174BC00A289F7 /* RemindersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAA765C823D174BC00A289F7 /* RemindersModel.xcdatamodeld */; };
 		AADD991023D2302700C41359 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD990F23D2302700C41359 /* ReminderView.swift */; };
 		AADF2CBF23D23AED00C7B9CB /* ScheduleSpecification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */; };
@@ -70,6 +72,8 @@
 		AA5CE83623D0D01500A0FE17 /* RemindMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5CE83A23D0D01500A0FE17 /* RemindMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindMeUITests.swift; sourceTree = "<group>"; };
 		AA5CE83C23D0D01500A0FE17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA5D1A42241712F50058A7BA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		AA5D1A4424177A2F0058A7BA /* Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subviews.swift; sourceTree = "<group>"; };
 		AAA765C923D174BC00A289F7 /* RemindersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindersModel.xcdatamodel; sourceTree = "<group>"; };
 		AADD990F23D2302700C41359 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		AADF2CBE23D23AED00C7B9CB /* ScheduleSpecification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSpecification.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			children = (
 				AA1002BD23FA56E200DAC5F2 /* ViewControllerAccess.swift */,
 				AA5CE81C23D0D01100A0FE17 /* Home.swift */,
+				AA5D1A42241712F50058A7BA /* HomeScreen.swift */,
 				AADD991123D231E800C41359 /* Views */,
 				AAA765C323D173F300A289F7 /* DataStructures */,
 				AA5CE81823D0D01100A0FE17 /* AppDelegate.swift */,
@@ -189,6 +194,7 @@
 				AA1002BB23FA3F3200DAC5F2 /* EditReminderView.swift */,
 				AAFE303D24022ED000CDD6D0 /* EditingSubviews.swift */,
 				AAFE3046240B2E2500CDD6D0 /* CategoryList.swift */,
+				AA5D1A4424177A2F0058A7BA /* Subviews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,10 +337,12 @@
 				AA1002BC23FA3F3200DAC5F2 /* EditReminderView.swift in Sources */,
 				AA5CE81923D0D01100A0FE17 /* AppDelegate.swift in Sources */,
 				AADD991023D2302700C41359 /* ReminderView.swift in Sources */,
+				AA5D1A4524177A2F0058A7BA /* Subviews.swift in Sources */,
 				AADF2CBF23D23AED00C7B9CB /* ScheduleSpecification.swift in Sources */,
 				AA5CE81B23D0D01100A0FE17 /* SceneDelegate.swift in Sources */,
 				AA5CE81D23D0D01100A0FE17 /* Home.swift in Sources */,
 				AAA765CA23D174BC00A289F7 /* RemindersModel.xcdatamodeld in Sources */,
+				AA5D1A43241712F50058A7BA /* HomeScreen.swift in Sources */,
 				AAFE3049240B606200CDD6D0 /* Extensions.swift in Sources */,
 				AA1002BE23FA56E200DAC5F2 /* ViewControllerAccess.swift in Sources */,
 				AA036DEF23FAFC4B00C66511 /* Reminder.swift in Sources */,
